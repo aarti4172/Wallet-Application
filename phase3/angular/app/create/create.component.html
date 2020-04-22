@@ -1,0 +1,54 @@
+<div style="text-align:center">
+    <h2>{{message}}</h2>
+</div>
+
+<div class="container-fluid" >
+    <form [formGroup]="createAccountForm" ngSubmit="onsubmit()" class="form-horizontal">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Create your account</h3>
+        </div>
+        <div class="panel-body">
+        <div class="form-group">
+            <label>Full Name:</label>
+            <input type="text" formControlName="name" class="form-control"
+                   [class.is-invalid]="createAccountForm.get('name').invalid && createAccountForm.get('name').touched"/>
+            <div *ngIf="createAccountForm.get('name').invalid && createAccountForm.get('name').touched" class=" text-danger">
+                <small *ngIf="createAccountForm.get('name').errors?.required" class="text-danger">This field is mandatory.</small>       
+                <small *ngIf="createAccountForm.get('name').errors?.pattern" class="text-danger">Name can contain only alphabets.</small>
+                <small *ngIf="createAccountForm.get('name').errors?.maxlength" class="text-danger">Name cannot exceed more than 25 characters.</small>
+            </div><br><br>
+            <label>Mobile Number:</label>
+            <input type="number" formControlName="mobileNum" class="form-control"
+                   [class.is-invalid]="createAccountForm.get('mobileNum').invalid && createAccountForm.get('mobileNum').touched"/>
+            <div *ngIf="createAccountForm.get('mobileNum').invalid && createAccountForm.get('mobileNum').touched">
+                <small *ngIf="createAccountForm.get('mobileNum').errors?.required" class="text-danger">This field is mandatory.</small>       
+                <small *ngIf="createAccountForm.get('mobileNum').errors?.maxlength" class="text-danger">Mobile Number must contain exactly 10 digits.</small>
+                <small *ngIf="createAccountForm.get('mobileNum').errors?.minlength" class="text-danger">Mobile Number must contain exactly 10 digits.</small>
+            </div><br><br>
+            <label>Email-address:</label>
+            <input type="email" formControlName="email" class="form-control"
+                   [class.is-invalid]="createAccountForm.get('email').invalid && createAccountForm.get('email').touched"/>
+            <div *ngIf="createAccountForm.get('email').invalid && createAccountForm.get('email').touched">
+                <small *ngIf="createAccountForm.get('email').errors?.required" class="text-danger">This field is mandatory.</small>       
+                <small *ngIf="createAccountForm.get('email').errors?.email" class="text-danger">Enter a valid email.</small>
+            </div><br><br>
+            <label>Address:</label>
+            <input type="text" formControlName="address" class="form-control"
+                   [class.is-invalid]="createAccountForm.get('address').invalid && createAccountForm.get('address').touched"/>
+            <div *ngIf="createAccountForm.get('address').invalid && createAccountForm.get('address').touched">
+                <small *ngIf="createAccountForm.get('address').errors?.required" class="text-danger">This field is mandatory.</small>       
+            </div><br><br>
+            <label>Date of Birth:</label>
+            <input type="date" formControlName="dob" class="form-control"
+                   [class.is-invalid]="createAccountForm.get('dob').invalid && createAccountForm.get('dob').touched"/>
+            <div *ngIf="createAccountForm.get('dob').invalid && createAccountForm.get('dob').touched">
+                <small *ngIf="createAccountForm.get('dob').errors?.required" class="text-danger">This field is mandatory.</small>       
+            </div><br><br>
+            <button class="btn btn-primary" style="color:royalblue" type="submit" [disabled]="!createAccountForm.valid">Submit</button>
+            <button class="btn btn-primary" type="reset">Clear</button>
+        </div>
+       </div>
+    </div>
+    </form>
+</div>
