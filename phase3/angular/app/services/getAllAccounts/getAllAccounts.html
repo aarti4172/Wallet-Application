@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+        <table class="table table-striped custab">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Account Number</th>
+                    <th>Opening Date</th>
+                    <th>Account Balance</th>
+                    <th>Address</th>
+                    <th>Email-address</th>
+                    <th>Date of Birth</th>
+                    <th>Mobile Numer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let account of accounts">
+                    <td>{{account.name}}</td>
+                    <td>{{account.openDate}}</td>
+                    <td>{{account.accNum}}</td>
+                    <td>{{account.balance}}</td>
+                    <td>{{account.address}}</td>
+                    <td>{{account.email}}</td>
+                    <td>{{account.dob}}</td>
+                    <td>{{account.mobNum}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div-class>
+</div>
