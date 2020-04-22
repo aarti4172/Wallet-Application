@@ -1,0 +1,25 @@
+<div class="sidenav" id="mySidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a routerLink="/about" (click)="closeNav()">About</a>
+    <a routerLink="/services" (click)="closeNav()">Services</a>
+    <a routerLink="/clients" (click)="closeNav()">Clients</a>
+    <a routerLink="/contactUs" (click)="closeNav()">Contact Us</a>
+</div>
+
+<div id="main">
+    <div class= "toolbar" role="banner">
+        <img width="80" height="60" title="zLogo" alt="ZipZapZooLogo" 
+            src="assets\img\logo.jpg"/>
+        <span >ZipZapZoo</span>
+        <div class="spacer"></div>
+        <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+    </div>
+    <div class="verticalSpacer"></div>
+    <router-outlet></router-outlet>
+</div>
+
+
+
+
+   
+
